@@ -45,4 +45,3 @@ def delete_product(db:session,product_id:int):
     db.delete(db_product)
     db.commit()
     return db_product
-
