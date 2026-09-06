@@ -37,3 +37,4 @@ def category_products(db:Session=Depends(get_db),category_name=None):
     if not product_list:
         raise HTTPException(status_code=404,detail="no products")
     return product_list
+

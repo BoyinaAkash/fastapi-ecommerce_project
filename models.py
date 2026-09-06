@@ -7,3 +7,4 @@ class Product(Base):
     product_name=Column(String(100),nullable=False)
     price=Column(Float,nullable=False)
     stock=Column(Integer,nullable=False)
+
