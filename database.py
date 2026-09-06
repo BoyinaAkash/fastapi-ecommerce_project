@@ -1,7 +1,10 @@
 from sqlalchemy import create_engine
+import os
+from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker , declarative_base
+load_dotenv()
 # DATABASE_URL="mysql+pymysql://root:root@localhost:3306/ecommerce_db"
-DATABASE_URL="mysql+pymysql://avnadmin:AVNS_xObL3o43wV0W1AXDUms@akash12ma-akashboyina-2925.a.aivencloud.com:17823/defaultdb"
+DATABASE_URL=os.getenv("DATABASE_URL")
 engine=create_engine(DATABASE_URL)
 SessionLocal=sessionmaker(
     autocommit = False,
