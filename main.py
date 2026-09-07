@@ -29,7 +29,7 @@ def read_one(product_id:int,db:Session=Depends(get_db)):
 def delete(product_id:int,db:Session=Depends(get_db)):
     deleted=crud.delete_product(db,product_id)
     if not deleted:
-        raise HTTPException(status_code=404,details="product not found")
+        raise HTTPException(status_code=404,detail="product not found")
     return {"message":"product deleted successfully"}
 @app.get("/category/{category_name}",response_model=list[schemas.ProductResponse])
 def category_products(db:Session=Depends(get_db),category_name=None):
